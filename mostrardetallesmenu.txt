@@ -1,0 +1,12 @@
+constructor(props) {
+    super(props);
+
+ selectedDish: null
+  }
+
+
+
+
+onDishSelect(dishId) {
+    this.setState({ selectedDish: dishId});
+  }
