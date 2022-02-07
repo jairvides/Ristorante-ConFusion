@@ -109,6 +109,7 @@ class CommentForm extends Component {
               <Row className="form-group">
                 <Label htmlFor="rating" md={12} >Rating</Label>
                 <Col md={12}>
+                  {/* eslint-disable */}
                   <Control.select model=".rating"
                     className="form-control"
                     name="rating"
