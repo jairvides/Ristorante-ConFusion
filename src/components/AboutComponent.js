@@ -6,6 +6,7 @@ import { baseUrl } from '../shared/baseUrl';
 import { Fade, Stagger } from 'react-animation-components';
 
 function RenderLeader({leader}) {
+<<<<<<< HEAD
     return(
         <Media tag="li">
             <Media left middle>
@@ -57,6 +58,67 @@ function LeaderList(props) {
 }
 
 function About(props) {
+=======
+    return (
+        <div key={leader.id} className="col-12 mt-5">
+            <Media>
+                <div class="imgleft">
+                <Media left middle>
+                    <Media object src={baseUrl + leader.image} alt={leader.name} />
+                </Media>
+                </div>
+                <div class="bodyright">
+                <Media body className="ml-5">
+                    <Media heading>{leader.name}</Media>
+                    <p>{leader.designation}</p>
+                    <p>{leader.description}</p>
+                </Media>
+                </div>
+            </Media>
+        </div>
+    );
+}
+
+function About(props) {
+
+    const leaders = (() => {
+      if (props.leaders.isLoading) {
+        return (
+          <div className="container">
+            <div className="row">
+              <Loading />
+            </div>
+          </div>
+        );
+      }
+      else if (props.leaders.errMess) {
+        return (
+          <div className="container">
+            <div className="row">
+              <h4>{props.leaders.errMess}</h4>
+            </div>
+          </div>
+        );
+      }
+      else {
+        return (
+          <ul className="list-unstyled">
+            <Stagger in>
+              {
+                props.leaders.leaders.map((leader) => {
+                  return (
+                    <Fade in>
+                      <RenderLeader leader={leader} />
+                    </Fade>
+                  );
+                })
+              }
+            </Stagger>
+          </ul>
+        );
+      }
+    })();
+>>>>>>> 8cb360a18da1b49ddf819b630f99c2e6ee0dab44
 
     return(
         <div className="container">
@@ -68,7 +130,11 @@ function About(props) {
                 <div className="col-12">
                     <h3>About Us</h3>
                     <hr />
+<<<<<<< HEAD
                 </div>                
+=======
+                </div>
+>>>>>>> 8cb360a18da1b49ddf819b630f99c2e6ee0dab44
             </div>
             <div className="row row-content">
                 <div className="col-12 col-md-6">
@@ -99,6 +165,10 @@ function About(props) {
                             <blockquote className="blockquote">
                                 <p className="mb-0">You better cut the pizza in four pieces because
                                     I'm not hungry enough to eat six.</p>
+<<<<<<< HEAD
+=======
+                                <p></p>
+>>>>>>> 8cb360a18da1b49ddf819b630f99c2e6ee0dab44
                                 <footer className="blockquote-footer">Yogi Berra,
                                 <cite title="Source Title">The Wit and Wisdom of Yogi Berra,
                                     P. Pepe, Diversion Books, 2014</cite>
@@ -112,10 +182,20 @@ function About(props) {
                 <div className="col-12">
                     <h2>Corporate Leadership</h2>
                 </div>
+<<<<<<< HEAD
                 <LeaderList leaders={props.leaders} />
+=======
+                <div className="col-12">
+                    {leaders}
+                </div>
+>>>>>>> 8cb360a18da1b49ddf819b630f99c2e6ee0dab44
             </div>
         </div>
     );
 }
 
+<<<<<<< HEAD
 export default About;    
+=======
+export default About;
+>>>>>>> 8cb360a18da1b49ddf819b630f99c2e6ee0dab44

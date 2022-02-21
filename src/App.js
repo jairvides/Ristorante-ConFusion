@@ -9,6 +9,7 @@ const store = ConfigureStore();
 
 class App extends Component {
 
+<<<<<<< HEAD
   render() {
     return (
       <Provider store={store}>
@@ -23,3 +24,18 @@ class App extends Component {
 }
 
 export default App;
+=======
+	render() {
+		return (
+			<Provider store={store}>
+				<BrowserRouter>
+					<div>
+						<Main />
+					</div>
+				</BrowserRouter>
+			</Provider>
+		);
+	}
+}
+export default App;
+>>>>>>> 8cb360a18da1b49ddf819b630f99c2e6ee0dab44
